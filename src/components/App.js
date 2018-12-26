@@ -11,41 +11,41 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    axios.get(`/forecast/${key}/40.6635,-73.9387?exclude=minutely,hourly`).then(res => {
+    axios.get(`/forecast/${key}/40.6635,-73.9387?exclude=minutely,hourly`).then(city => {
       let newState = {...this.state.allCities}
-      newState.new_york = res.data;
+      newState.new_york = city.data;
       this.setState({allCities: newState}, () => {
         console.log(this.state);
       });
     }) 
 
-    axios.get(`/forecast/${key}/41.8376,-87.6818?exclude=minutely,hourly`).then(res => {
+    axios.get(`/forecast/${key}/41.8376,-87.6818?exclude=minutely,hourly`).then(city => {
       let newState = {...this.state.allCities}
-      newState.chicago = res.data;
+      newState.chicago = city.data;
       this.setState({allCities: newState}, () => {
         console.log(this.state);
       });
     }) 
 
-    axios.get(`/forecast/${key}/34.0194,-118.4108?exclude=minutely,hourly`).then(res => {
+    axios.get(`/forecast/${key}/34.0194,-118.4108?exclude=minutely,hourly`).then(city => {
       let newState = {...this.state.allCities}
-      newState.los_angeles = res.data;
+      newState.los_angeles = city.data;
       this.setState({allCities: newState}, () => {
         console.log(this.state);
       });
     }) 
 
-    axios.get(`/forecast/${key}/29.7866,-95.3909?exclude=minutely,hourly`).then(res => {
+    axios.get(`/forecast/${key}/29.7866,-95.3909?exclude=minutely,hourly`).then(city => {
       let newState = {...this.state.allCities}
-      newState.houston = res.data;
+      newState.houston = city.data;
       this.setState({allCities: newState}, () => {
         console.log(this.state);
       });
     }) 
 
-    axios.get(`/forecast/${key}/33.5722,-112.0901?exclude=minutely,hourly`).then(res => {
+    axios.get(`/forecast/${key}/33.5722,-112.0901?exclude=minutely,hourly`).then(city => {
       let newState = {...this.state.allCities}
-      newState.phoenix = res.data;
+      newState.phoenix = city.data;
       this.setState({allCities: newState}, () => {
         console.log(this.state);
       });
@@ -56,6 +56,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        hi
         {JSON.stringify(this.state.allCities.new_york)}
       </div>
     );

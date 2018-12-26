@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "best-us-weather-now",
+    "default": "best-us-weather-now"
+  }
+}
