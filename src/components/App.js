@@ -23,11 +23,28 @@ class App extends Component {
           {Object.keys(this.props.allCities).map(city => {
             let data = this.props.allCities[city];
             return (
-              <li key={data.latitude}>
-                {city}
-                {data.currently.summary}
-                {data.currently.temperature}
-              </li>
+              <table key={data.latitude}>
+                <thead>
+                  <tr>
+                    <th>city</th>
+                    <th>summary</th>
+                    <th>temperature</th>
+                    <th>windSpeed</th>
+                    <th>cloudCover</th>
+                    <th>humidity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{city}</td>
+                    <td>{data.currently.summary}</td>
+                    <td>{data.currently.temperature}</td>
+                    <td>{data.currently.windSpeed}</td>
+                    <td>{data.currently.cloudCover}</td>
+                    <td>{data.currently.humidity}</td>
+                  </tr>
+                </tbody>
+              </table>
             )
           })}
         </ul>
