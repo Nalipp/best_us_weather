@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
 import { getAllCities } from '../api/allCities';
 import { addCity, sortCities } from '../actions';
 import { connect } from 'react-redux';
 import CitiesTable from './CitiesTable';
 
-class App extends Component {
+class Cities extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,4 +57,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Cities);
