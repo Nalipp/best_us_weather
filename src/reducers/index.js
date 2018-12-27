@@ -1,9 +1,10 @@
-export const cities = (state = {}, action) => {
+export const cities = (state = [], action) => {
   switch (action.type) {
     case 'ADD_CITY':
-      const cityCopy = {...state}
-      cityCopy[action.payload[0]] = action.payload[1];
+      const cityCopy = [...state, action.payload]
       return cityCopy;
+    case 'SORT_CITIES':
+      return action.payload
     default:
       return state
   }
